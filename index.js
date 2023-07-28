@@ -41,6 +41,7 @@ app.post(URI, async (req, res) => {                                     //for bo
         var msg = req.body.message.text;
         sendersChatID = req.body.message.chat.id;
         logger.info('Message Text : '+msg+'\n\t  From : '+req.body.message.from.first_name+'\n\t  Chat ID : '+sendersChatID);
+        console.log('Message Text : '+msg+'\n\t  From : '+req.body.message.from.first_name+'\n\t  Chat ID : '+sendersChatID);
         if(msg != "")
         {
             wiki_random_search = wiki_random_search+msg;
@@ -63,6 +64,7 @@ app.post(URI, async (req, res) => {                                     //for bo
                 const SendURL = T_API+'/sendMessage?chat_id=1069308235&text='+msg;
                 const response = await ex.post(SendURL)
                 logger.info('Reply sent to Vedant : '+text)
+                console.log('Reply sent to Vedant : '+text)
                 wiki_random_search = 'https://en.wikipedia.org/wiki?search='
             }
             if(req.body.message.from.first_name == 'Vedantt')
@@ -76,6 +78,7 @@ app.post(URI, async (req, res) => {                                     //for bo
                 const SendURL = T_API+'/sendMessage?chat_id='+sendersChatID+'&text='+text;
                 const response = await ex.post(SendURL)
                 logger.info('Reply sent : '+text)
+                console.log('Reply sent : '+text)
                 wiki_random_search = 'https://en.wikipedia.org/wiki?search='
             }
             
