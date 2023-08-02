@@ -14,7 +14,7 @@ const logger = winston.createLogger({                                   //logger
 
 const {TOKEN, SERVER_URL} = process.env                                 //saving Token ans Server url from environment variables file
 const T_API = 'https://api.telegram.org/bot'+TOKEN;                     //API for Telegram bot, not to be disclosed
-const URI = '/webhook/'+TOKEN;                                          // terminal
+const URI = '/webhook/'+TOKEN;                                          //
 const W_URL = SERVER_URL+URI;                                           //webhook URL
 
 var Title;
